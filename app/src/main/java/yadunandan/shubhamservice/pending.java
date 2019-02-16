@@ -1,5 +1,6 @@
 package yadunandan.shubhamservice;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -29,9 +30,11 @@ public class pending extends Fragment {
         String[] Number={"9601019977","9601019988","9601019999","9601019900","9601019911","324324234","34324234"};
         String[] Adress={"abc","def","ghi","jkl","mno","fdsfsdfs","fdsfsdfsffsd"};
         String[] Summary={"pqr","stu","vwx","yz","thats it","dsfsdfsdf","dfsfsfdsfds"};
-        String[] StatusOfButton={"pending","pending","pending","pending","pending","pending","pending"};
+        String[] StatusOfButton={"Approved","approved","pending","pending","pending","pending","pending"};
         rv=view.findViewById(R.id.rv);
         //view.Context c=getActivity();
+        //DatabaseHelper db=new DatabaseHelper();
+
         prjv=new PendingRecyclerJavaClass(getActivity(),Name,Type,Number,Adress,Summary,StatusOfButton);
         rv.setAdapter(prjv);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -43,6 +46,7 @@ public class pending extends Fragment {
 
             //}
         //});
+        //Cursor cs=db.getAllData();
     }
 
 
