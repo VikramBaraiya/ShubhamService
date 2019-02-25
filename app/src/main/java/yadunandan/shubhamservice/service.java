@@ -58,7 +58,7 @@ public class service extends Fragment implements AdapterView.OnItemSelectedListe
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext(),"you clicked button",Toast.LENGTH_SHORT).show();
-                DatabaseHelper dh=new DatabaseHelper(getActivity(),ServiceData);
+              /*  DatabaseHelper dh=new DatabaseHelper(getActivity(),ServiceData);
                 boolean flag;
                 flag=dh.insertData();
                 if(flag)
@@ -70,7 +70,16 @@ public class service extends Fragment implements AdapterView.OnItemSelectedListe
                 {
                     Toast.makeText(getContext(),"Not ",Toast.LENGTH_SHORT).show();
 
-                }
+                }*/
+              CustomerService cs=new CustomerService();
+             // cs.setId();
+              cs.setName(ServiceData[0]);
+              cs.setMobile(ServiceData[1]);
+              cs.setAddress(ServiceData[2]);
+              cs.setReason(ServiceData[3]);
+              cs.setType(ServiceData[4]);
+              MainActivity.db.daobj().insertServiceRequest(cs);
+              Toast.makeText(getActivity(),"insert operation Successfull",Toast.LENGTH_SHORT).show();
 
 
 

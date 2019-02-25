@@ -1,5 +1,6 @@
 package yadunandan.shubhamservice;
 
+import android.arch.persistence.room.Room;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -20,10 +21,13 @@ import android.view.ViewGroup;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    static DatabaseClass db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+        db= Room.databaseBuilder(getApplicationContext(),DatabaseClass.class,"DB").allowMainThreadQueries().build();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -36,11 +40,19 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        Fragment f=new service();
+       //if(screen!=null)
+       //{
+
+       //}
+        //if(savedInstanceState!=null)
+       //{
+
+       //}
+      /*  Fragment f=new service();
         FragmentManager fm=getSupportFragmentManager();
         FragmentTransaction ft=fm.beginTransaction();
         ft.replace(R.id.screen,f);
-        ft.commit();
+        ft.commit();*/
     }
 
     @Override
