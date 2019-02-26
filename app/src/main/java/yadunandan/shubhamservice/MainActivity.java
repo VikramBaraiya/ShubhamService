@@ -20,6 +20,8 @@ import android.view.ViewGroup;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+   public FragmentManager frm= (FragmentManager) getSupportFragmentManager();
+  public  FragmentTransaction fragmentTransaction=frm.beginTransaction();
 
     static DatabaseClass db;
     @Override
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        db= Room.databaseBuilder(getApplicationContext(),DatabaseClass.class,"DB").allowMainThreadQueries().build();
+        db= Room.databaseBuilder(getApplicationContext(),DatabaseClass.class,"DB").allowMainThreadQueries().fallbackToDestructiveMigration().build();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -98,9 +100,10 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
             f=new service();
         } else if (id == R.id.completed) {
+          f=new Completed();
 
         } else if (id == R.id.pending) {
-            f=new pending();
+            f=new Pending();
 
 
         }

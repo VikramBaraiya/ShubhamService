@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/fontcolor">
 
     <TextView
         android:id="@+id/lblname"
@@ -11,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:text="Name"
-        app:layout_constraintBaseline_toBaselineOf="@+id/name"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Name_input"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -33,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Mobile"
-        app:layout_constraintBaseline_toBaselineOf="@+id/Mobile"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Mobile_input"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -42,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Address"
-        app:layout_constraintBaseline_toBaselineOf="@+id/Address"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Address_input"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -51,11 +52,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Reason"
-        app:layout_constraintBaseline_toBaselineOf="@+id/Summary"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Summary_input"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/Name_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -67,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@+id/reateerviceequest" />
 
     <EditText
-        android:id="@+id/Mobile"
+        android:id="@+id/Mobile_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -76,10 +77,10 @@
         android:hint="9601019977"
         android:inputType="textPersonName|phone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toBottomOf="@+id/Name_input" />
 
     <EditText
-        android:id="@+id/Address"
+        android:id="@+id/Address_input"
         android:layout_width="214dp"
         android:layout_height="97dp"
         android:layout_marginTop="16dp"
@@ -88,10 +89,10 @@
         android:hint="Suva plot,new ploicle line road upleta "
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Mobile" />
+        app:layout_constraintTop_toBottomOf="@+id/Mobile_input" />
 
     <EditText
-        android:id="@+id/Summary"
+        android:id="@+id/Summary_input"
         android:layout_width="214dp"
         android:layout_height="120dp"
         android:layout_marginTop="8dp"
@@ -100,7 +101,7 @@
         android:hint="Clearity is not good the picture appears distorted "
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Address" />
+        app:layout_constraintTop_toBottomOf="@+id/Address_input" />
 
     <TextView
         android:id="@+id/lblservicetype"
@@ -110,7 +111,7 @@
         android:layout_marginTop="8dp"
         android:text="Service Type"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Summary" />
+        app:layout_constraintTop_toBottomOf="@+id/Summary_input" />
 
     <Button
         android:id="@+id/button"
@@ -119,10 +120,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:text="Button"
+        android:text="Create Service Request"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@android:color/transparent"/>
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
@@ -138,6 +140,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Summary" />
+        app:layout_constraintTop_toBottomOf="@+id/Summary_input" />
 
 </android.support.constraint.ConstraintLayout>
